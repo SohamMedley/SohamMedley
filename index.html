@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soham Medley - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #fff;
+            background-color: #0d1117;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: relative;
+            text-align: center;
+            color: #fff;
+            background: linear-gradient(135deg, #0f3460, #16213e);
+            padding: 70px 20px;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        header h1 {
+            font-size: 4em;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.5em;
+            margin-top: 20px;
+            opacity: 0.9;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: #0d1117;
+            padding: 10px 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 600;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            background-color: #e94560;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        section {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .about {
+            background-color: #16213e;
+            padding: 100px 20px;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
+        }
+
+        .about h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: #e94560;
+        }
+
+        .about p {
+            font-size: 1.2em;
+            color: #cfcfcf;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .projects {
+            background-color: #0d1117;
+        }
+
+        .projects h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            color: #e94560;
+        }
+
+        .projects .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .project-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-item img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.4s ease;
+        }
+
+        .project-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .project-item .project-info {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            text-align: left;
+            color: #fff;
+        }
+
+        .project-item .project-info h3 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        .project-item .project-info p {
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .contact {
+            background-color: #16213e;
+            padding: 100px 20px;
+            clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
+        }
+
+        .contact h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: #e94560;
+        }
+
+        .contact p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #cfcfcf;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            color: #fff;
+            background-color: #e94560;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            margin: 10px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ff5673;
+            transform: translateY(-3px);
+        }
+
+        .btn-instagram {
+            background-color: #e4405f;
+        }
+
+        .btn-instagram:hover {
+            background-color: #ff6373;
+        }
+
+        footer {
+            background-color: #0f3460;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Soham Medley</h1>
+        <p>Music Producer | Graphic Designer | Thumbnail Creator</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>I am Soham Medley, a passionate graphic designer & music producer. I specialize in creating stunning custom thumbnail designs & mashups and remixes. My work bridges creativity and technical precision to deliver impactful visuals.</p>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+   
+        <div class="project-item" tabindex="0">
+            <img src="C:\Users\Michu155\Downloads\T1.png" alt="Thumbnail Design 1">
+            <h3>PODCAST THUMBNAIL</h3>
+            <p>This is a podcast thumbnail desgined for Ronaldo & Beast!!</p>
+        </div>
+
+        <div class="project-item" tabindex="0">
+            <img src="C:\Users\Michu155\Downloads\T2.jpg" alt="Thumbnail Design 2">
+            <h3>GAMING THUMBNAIL</h3>
+            <p>This is a gaming thumbnail desgined for Jonathan!!</p>
+        </div>
+
+<div class="project-item" tabindex="0">
+            <img src="C:\Users\Michu155\Downloads\T3.jpg" alt="Thumbnail Design 3">
+            <h3>CONTENT THUMBNAIL</h3>
+            <p>This is a course/challenge video thumbnail officially desgined for Mix With Vasudev!!</p>
+        </div>
+
+        <div class="project-item" tabindex="0">
+            <img src="C:\Users\Michu155\Downloads\T4.jpg" alt="Thumbnail Design 4">
+            <h3>MASHUP THUMBNAIL</h3>
+            <p>This is a mashup thumbnail desgined for Elvish X Shubh X Honey Paaji X Emiway X Fukra!!</p>
+        </div>
+
+<div class="project-item" tabindex="0">
+            <img src="C:\Users\Michu155\Downloads\T5.jpg" alt="Thumbnail Design 5">
+            <h3>POSTER DESIGN</h3>
+            <p>This is a poster desgined for Kr$na!!</p>
+        </div>
+
+        <div class="project-item" tabindex="0">
+            <img src="C:\Users\Michu155\Downloads\T6.jpg" alt="Thumbnail Design 6">
+            <h3>RAP COVERART</h3>
+            <p>This is a rap coverart officially desgined for Sidd!!</p>
+        </div>
+
+        <div class="project-item" tabindex="0">
+            <img src="C:\Users\Michu155\Downloads\T7.png" alt="Thumbnail Design 7">
+            <h3>DHH Official</h3>
+            <p>Designed this thumbnail for DHH Official for his King's Mere Pyare Emiway unofficial music video!!</p>
+        </div>
+        <div class="project-item" tabindex="0">
+            <img src="C:\Users\Michu155\Downloads\T8.png" alt="Thumbnail Design 8">
+            <h3>DHH Official</h3>
+            <p>Designed this thumbnail for DHH Official for his Raftaar's Prophecy unofficial music video!!</p>
+        </div>
+
+    </section>
+ 
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p>Have a project in mind? Let's work!</p>
+               <a href="https://www.instagram.com/sohammedleyofficial/" class="btn btn-instagram"> My Instagram</a>
+    </section>
+    <footer style="background-color: #0D1117; color: #fff; padding: 20px 0; text-align: center; margin-top: 40px;">
+    <p>&copy; 2024 Soham Medley. All rights reserved.
+</p>
+</footer>
+
+</body>
+</html>
